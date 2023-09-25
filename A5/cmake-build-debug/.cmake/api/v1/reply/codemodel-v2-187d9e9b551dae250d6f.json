@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "comp3400_2023w_a5",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "a5::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a5-Debug-1bf461063658c1b23193.json",
+					"name" : "a5",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a5-gen-input::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a5-gen-input-Debug-e7301715749f61cc81a6.json",
+					"name" : "a5-gen-input",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "K:/Users/abdul/Downloads/Classes 2018/Semester 11/COMP 3400 Adv Obj Orntd Sys Des Usng C++/Assignments/A5/cmake-build-debug",
+		"source" : "K:/Users/abdul/Downloads/Classes 2018/Semester 11/COMP 3400 Adv Obj Orntd Sys Des Usng C++/Assignments/A5"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

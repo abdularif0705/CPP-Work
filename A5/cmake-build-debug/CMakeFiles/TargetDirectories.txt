@@ -1,0 +1,4 @@
+K:/Users/abdul/Downloads/Classes 2018/Semester 11/COMP 3400 Adv Obj Orntd Sys Des Usng C++/Assignments/A5/cmake-build-debug/CMakeFiles/a5-gen-input.dir
+K:/Users/abdul/Downloads/Classes 2018/Semester 11/COMP 3400 Adv Obj Orntd Sys Des Usng C++/Assignments/A5/cmake-build-debug/CMakeFiles/a5.dir
+K:/Users/abdul/Downloads/Classes 2018/Semester 11/COMP 3400 Adv Obj Orntd Sys Des Usng C++/Assignments/A5/cmake-build-debug/CMakeFiles/edit_cache.dir
+K:/Users/abdul/Downloads/Classes 2018/Semester 11/COMP 3400 Adv Obj Orntd Sys Des Usng C++/Assignments/A5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

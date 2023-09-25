@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "A3",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "A3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-A3-Debug-29f7ee9219b9b121dd9a.json",
+					"name" : "A3",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "K:/Users/abdul/Downloads/Classes 2018/Semester 11/COMP 3400 Adv Obj Orntd Sys Des Usng C++/Assignments/A3/cmake-build-debug",
+		"source" : "K:/Users/abdul/Downloads/Classes 2018/Semester 11/COMP 3400 Adv Obj Orntd Sys Des Usng C++/Assignments/A3"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

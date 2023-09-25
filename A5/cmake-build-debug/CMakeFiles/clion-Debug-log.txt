@@ -1,0 +1,4 @@
+K:\Tools\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=K:/Tools/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/ninja/win/x64/ninja.exe -G Ninja -S "K:\Users\abdul\Downloads\Classes 2018\Semester 11\COMP 3400 Adv Obj Orntd Sys Des Usng C++\Assignments\A5" -B "K:\Users\abdul\Downloads\Classes 2018\Semester 11\COMP 3400 Adv Obj Orntd Sys Des Usng C++\Assignments\A5\cmake-build-debug"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: K:/Users/abdul/Downloads/Classes 2018/Semester 11/COMP 3400 Adv Obj Orntd Sys Des Usng C++/Assignments/A5/cmake-build-debug

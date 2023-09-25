@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+
+<html  dir="ltr" lang="en" xml:lang="en">
+<head>
+    <title>COMP3400-30-R-2023W: Assignment 3</title>
+    <link rel="shortcut icon" href="https://moodle.cs.uwindsor.ca/theme/image.php/boost/theme/1674767866/favicon" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="moodle, COMP3400-30-R-2023W: Assignment 3" />
+<link rel="stylesheet" type="text/css" href="https://moodle.cs.uwindsor.ca/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.css" /><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="https://moodle.cs.uwindsor.ca/theme/styles.php/boost/1674767866_1673912838/all" />
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/moodle.cs.uwindsor.ca","homeurl":{},"sesskey":"THR1FF1D4H","sessiontimeout":"14400","sessiontimeoutwarning":"1200","themerev":"1674767866","slasharguments":1,"theme":"boost","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1674767866","admin":"admin","svgicons":true,"usertimezone":"America\/Toronto","courseId":110,"courseContextId":49605,"contextid":49778,"contextInstanceId":2115,"langrev":1674767866,"templaterev":"1674767866"};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/moodle.cs.uwindsor.ca\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/moodle.cs.uwindsor.ca\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/moodle.cs.uwindsor.ca\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/moodle.cs.uwindsor.ca\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/moodle.cs.uwindsor.ca\/theme\/yui_combo.php?m\/1674767866\/","combine":true,"comboBase":"https:\/\/moodle.cs.uwindsor.ca\/theme\/yui_combo.php?","ext":false,"root":"m\/1674767866\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_customcert-rearrange":{"requires":["dd-delegate","dd-drag"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_html-beautify":{},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/moodle.cs.uwindsor.ca\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/moodle.cs.uwindsor.ca\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1674767866\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/moodle.cs.uwindsor.ca\/lib\/javascript.php\/1674767866\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/moodle.cs.uwindsor.ca\/lib\/javascript.php\/1674767866\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdn.jsdelivr.net\/npm\/mathjax@2.7.9\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+<link rel="icon" href="https://moodle.cs.uwindsor.ca/public/favicon.ico?v=2" />
+
+<link rel="stylesheet" type="text/css" href="/public/asciinema-player.css" />
+<style>pre.asciinema-terminal { animation: none !important; }</style>
+<script src="/public/asciinema-player.min.js" type="text/javascript"></script>
+
+<style type="text/css">
+/* all shell windows must have class="shell" */
+.shell {
+  display: flex;
+  flex-direction: column;
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+
+  margin: 0;
+  padding: 0;
+
+  width: min-content;
+  height: unset;
+  font-size: larger;
+}
+
+/* top of shell window */
+.shell:before {
+  content: "";
+
+  color: black;
+  margin: 0;
+  padding: 0.75ex;
+
+  display: block;
+  border: 1px solid lightgray;
+  border-bottom: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  background-clip: content-box;
+  background: whitesmoke;
+  background: linear-gradient(to bottom, whitesmoke 0% silver 100%);
+
+  word-break: break-all;
+}
+
+/* bottom of shell window */
+.shell:after {
+  content: "";
+
+  color: black;
+  margin: 0;
+  margin-bottom: 1ex;
+  padding: 0.75ex;
+
+  display: block;
+  border: 1px solid lightgray;
+  border-top: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+
+  background-clip: content-box;
+  background: whitesmoke;
+  background: linear-gradient(to bottom, whitesmoke 0% silver 100%);
+
+  word-break: break-all;
+}
+
+.shell *:before {
+  background: whitesmoke;
+  margin-left: 1ex;
+  margin-right: 1ex;
+  padding: 0;
+}
+
+.shell *:after {
+  background: whitesmoke;
+  margin-left: 1ex;
+  margin-right: 1ex;
+  padding: 0;
+}
+
+.shell * {
+  background: black;
+  color: lightgray;
+  line-height: unset !important;
+  text-shadow: none;
+}
+
+/* all immediate children except explicit title */
+.shell > :not(.title) {
+  margin: 0;
+  padding: 1ex;
+  border: 2px solid lightgray;
+  border-top: none;
+  border-bottom: none;
+
+  background: black;
+  color: lightgray;
+
+  font-family: monospace;
+  white-space: pre;
+}
+
+/* shell window title */
+.shell > .title:first-child {
+  color: black;
+  margin: 0;
+  padding-bottom: 1ex;
+
+  text-align: center;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+
+  display: block;
+  border: 2px solid lightgray;
+  border-top: none;
+  border-bottom: none;
+
+  background-clip: content-box;
+  background: whitesmoke;
+  background: linear-gradient(to bottom, whitesmoke 0% silver 100%);
+
+  word-break: break-all;
+}
+
+/* all <pre> tags need pre formatting */
+.shell pre {
+  white-space: pre;
+}
+
+/* xterm XHTML exports use .ul, .bd, .it, .st, and .lu */
+.shell .ul { text-decoration: underline; }
+.shell .bd { font-weight: bold; }
+.shell .it { font-style: italic; }
+.shell .st { text-decoration: line-through; }
+.shell .lu { text-decoration: line-through underline; }
+
+/* allow a cursor to be shown */
+.shell .cursor {
+  background-color: black;
+  color: lightgray;
+  word-break: break-all;
+  unicode-bidi: embed;
+  font-family: monospace;
+  white-space: pre-wrap;
+  animation: cursorblink 1s step-end infinite;
+}
+
+@keyframes cursorblink {
+  from, to { color: transparent; }
+  50% { color: inherit; }
+}
+
+@media print {
+  .shell, .shell * {
+    page-break-inside: avoid;
+  }
+
+  .shell .title:first-child {
+    border-bottom: 1px solid lightgray;
+  } 
+
+  .shell * {
+    color: black !important;
+    background-color: white !important;
+    color-adjust: economy !important;
+  }
+}
+
+/* keyboard keys */
+.key {
+  font-size: small;
+  color: black;
+  background: gainsboro;
+  border: 0.2em outset;
+  border-radius: 5px;
+  padding: 0 0.4em;
+  margin: 0 0.25em;
+  line-height: 3.5ex;
+  white-space: nowrap;
+}
+
+@media print {
+  .key {
+    color-adjust: exact !important;
+  }
+}
+</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body  id="page-mod-assign-view" class="format-weeks limitedwidth  path-mod path-mod-assign gecko dir-ltr lang-en yui-skin-sam yui3-skin-sam moodle-cs-uwindsor-ca pagelayout-incourse course-110 context-49778 cmid-2115 cm-type-assign category-36 uses-drawers drawer-open-index">
+<div class="toast-wrapper mx-auto py-0 fixed-top" role="status" aria-live="polite"></div>
+<div id="page-wrapper" class="d-print-block">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Skip to main content</a>
+</div><script src="https://moodle.cs.uwindsor.ca/lib/javascript.php/1674767866/lib/polyfills/polyfill.js"></script>
+<script src="https://moodle.cs.uwindsor.ca/theme/yui_combo.php?rollup/3.17.2/yui-moodlesimple-min.js"></script><script src="https://moodle.cs.uwindsor.ca/lib/javascript.php/1674767866/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="navbar fixed-top navbar-light bg-white navbar-expand" aria-label="Site navigation">
+    
+        <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
+            <span class="navbar-toggler-icon"></span>
+            <span class="sr-only">Side panel</span>
+        </button>
+    
+        <a href="https://moodle.cs.uwindsor.ca/my/" class="navbar-brand d-none d-md-flex align-items-center m-0 mr-4 p-0 aabtn">
+    
+                <img src="https://moodle.cs.uwindsor.ca/pluginfile.php/1/core_admin/logocompact/300x300/1674767866/uwindsor-colour-logo-25x25.png" class="logo mr-1" alt="moodle.cs.uwindsor.ca">
+        </a>
+            <div class="primary-navigation">
+                <nav class="moremenu navigation">
+                    <ul id="moremenu-63dc56c2214c8-navbar-nav" role="menubar" class="nav more-nav navbar-nav">
+                                <li data-key="home" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://moodle.cs.uwindsor.ca/?redirect=0"
+                                                
+                                                tabindex="-1"
+                                            >
+                                                Home
+                                            </a>
+                                </li>
+                                <li data-key="myhome" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://moodle.cs.uwindsor.ca/my/"
+                                                
+                                                tabindex="-1"
+                                            >
+                                                Dashboard
+                                            </a>
+                                </li>
+                                <li data-key="mycourses" class="nav-item" role="none" data-forceintomoremenu="false">
+                                            <a role="menuitem" class="nav-link  "
+                                                href="https://moodle.cs.uwindsor.ca/my/courses.php"
+                                                
+                                                tabindex="-1"
+                                            >
+                                                My courses
+                                            </a>
+                                </li>
+                                <li class="dropdown nav-item" role="none" data-forceintomoremenu="false">
+                                    <a class="dropdown-toggle nav-link  " id="drop-down-63dc56c22126c" role="menuitem" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false" href="#" aria-controls="drop-down-menu-63dc56c22126c"
+                                        
+                                        tabindex="-1"
+                                    >
+                                        Links
+                                    </a>
+                                    <div class="dropdown-menu" role="menu" id="drop-down-menu-63dc56c22126c" aria-labelledby="drop-down-63dc56c22126c">
+                                                    <a class="dropdown-item" role="menuitem" href="http://www.cs.uwindsor.ca"  tabindex="-1">School of Computer Science</a>
+                                                    <a class="dropdown-item" role="menuitem" href="http://auth.cs.uwindsor.ca"  tabindex="-1">School of Computer Science Authentication</a>
+                                                <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" role="menuitem" href="http://www.uwindsor.ca"  tabindex="-1">University of Windsor</a>
+                                                <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" role="menuitem" href="https://brightspace.uwindsor.ca"  tabindex="-1">Brightspace</a>
+                                    </div>
+                                </li>
+                        <li role="none" class="nav-item dropdown dropdownmoremenu d-none" data-region="morebutton">
+                            <a class="dropdown-toggle nav-link " href="#" id="moremenu-dropdown-63dc56c2214c8" role="menuitem" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+                                More
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-left" data-region="moredropdown" aria-labelledby="moremenu-dropdown-63dc56c2214c8" role="menu">
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    
+        <ul class="navbar-nav d-none d-md-flex my-1 px-1">
+            <!-- page_heading_menu -->
+            
+        </ul>
+    
+        <div id="usernavigation" class="navbar-nav ml-auto">
+            <div class="popover-region collapsed popover-region-notifications"
+    id="nav-notification-popover-container" data-userid="16893"
+    data-region="popover-region">
+    <div class="popover-region-toggle nav-link icon-no-margin"
+        data-region="popover-region-toggle"
+        role="button"
+        aria-controls="popover-region-container-63dc56c22522f63dc56c211dfb3"
+        aria-haspopup="true"
+        aria-label=" Show notification window with no new notifications   "
+        tabindex="0">
+                <i class="icon fa fa-bell-o fa-fw "  title="Toggle notifications menu" role="img" aria-label="Toggle notifications menu"></i>
+        <div
+            class="count-container hidden"
+            data-region="count-container"
+            aria-hidden=true
+        >
+            0
+        </div>
+
+    </div>
+    <div 
+        id="popover-region-container-63dc56c22522f63dc56c211dfb3"
+        class="popover-region-container"
+        data-region="popover-region-container"
+        aria-expanded="false"
+        aria-hidden="true"
+        aria-label="Notification window"
+        role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notifications</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button"
+           href="#"
+           title="Mark all as read"
+           data-action="mark-all-read"
+           role="button"
+           aria-label="Mark all as read">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true"  ></i></span>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+        </a>
+            <a href="https://moodle.cs.uwindsor.ca/message/notificationpreferences.php"
+               title="Notification preferences"
+               aria-label="Notification preferences">
+                <i class="icon fa fa-cog fa-fw " aria-hidden="true"  ></i></a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications"
+            data-region="all-notifications"
+            role="log"
+            aria-busy="false"
+            aria-atomic="false"
+            aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">You have no notifications</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+        </div>
+                <a class="see-all-link"
+                    href="https://moodle.cs.uwindsor.ca/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">See all</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed" data-region="popover-region-messages">
+    <a id="message-drawer-toggle-63dc56c22722663dc56c211dfb4" class="nav-link popover-region-toggle position-relative icon-no-margin" href="#"
+            role="button">
+        <i class="icon fa fa-comment-o fa-fw "  title="Toggle messaging drawer" role="img" aria-label="Toggle messaging drawer"></i>
+        <div
+            class="count-container "
+            data-region="count-container"
+        >
+            <span aria-hidden="true">1</span>
+            <span class="sr-only">There are 1 unread conversations</span>
+        </div>
+    </a>
+    <span class="sr-only sr-only-focusable" data-region="jumpto" tabindex="-1"></span></div>
+            <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                    <div class="usermenu">
+                            <div class="dropdown show">
+                                <a href="#" role="button" id="user-menu-toggle" data-toggle="dropdown" aria-label="User menu"
+                                   aria-haspopup="true" aria-controls="user-action-menu" class="btn dropdown-toggle">
+                                    <span class="userbutton">
+                                        <span class="avatars">
+                                                <span class="avatar current">
+                                                    <span class="userinitials size-35">AA</span>
+                                                </span>
+                                        </span>
+                                    </span>
+                                </a>
+                                <div id="user-action-menu" class="dropdown-menu dropdown-menu-right">
+                                    <div id="usermenu-carousel" class="carousel slide" data-touch="false" data-interval="false" data-keyboard="false">
+                                        <div class="carousel-inner">
+                                            <div id="carousel-item-main" class="carousel-item active" role="menu" tabindex="-1" aria-label="User">
+                                                        <a href="https://moodle.cs.uwindsor.ca/user/profile.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Profile
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.cs.uwindsor.ca/grade/report/overview/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Grades
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.cs.uwindsor.ca/calendar/view.php?view=month" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Calendar
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.cs.uwindsor.ca/message/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Messages
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.cs.uwindsor.ca/user/files.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Private files
+                                                        </a>
+                                                    
+                                                        <a href="https://moodle.cs.uwindsor.ca/reportbuilder/index.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Reports
+                                                        </a>
+                                                    
+                                                    <div class="dropdown-divider"></div>
+                                                        <a href="https://moodle.cs.uwindsor.ca/user/preferences.php" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Preferences
+                                                        </a>
+                                                    <div class="dropdown-divider"></div>
+                                                        <a href="https://moodle.cs.uwindsor.ca/login/logout.php?sesskey=THR1FF1D4H" class="dropdown-item" role="menuitem" tabindex="-1">
+                                                                
+                                                            Log out
+                                                        </a>
+                                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            
+        </div>
+    </nav>
+    
+
+<div  class="drawer drawer-left drawer-primary d-print-none not-initialized" data-region="fixed-drawer" id="theme_boost-drawers-primary" data-preference="" data-state="show-drawer-primary" data-forceopen="0" data-close-on-resize="1">
+    <div class="drawerheader">
+        <button
+            class="btn drawertoggle icon-no-margin hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_boost-drawers-primary"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Close drawer"
+        >
+            <i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i>
+        </button>
+    </div>
+    <div class="drawercontent drag-container" data-usertour="scroller">
+                <div class="list-group">
+                <a href="https://moodle.cs.uwindsor.ca/?redirect=0" class="list-group-item list-group-item-action  " >
+                    Home
+                </a>
+                <a href="https://moodle.cs.uwindsor.ca/my/" class="list-group-item list-group-item-action  " >
+                    Dashboard
+                </a>
+                <a href="https://moodle.cs.uwindsor.ca/my/courses.php" class="list-group-item list-group-item-action  " >
+                    My courses
+                </a>
+                <a id="drop-down-1" href="#" class="list-group-item list-group-item-action icons-collapse-expand collapsed d-flex" data-toggle="collapse" data-target="#drop-down-menu-1" aria-expanded="false" aria-controls="drop-down-menu-1">
+                    Links
+                    <span class="ml-auto expanded-icon icon-no-margin mx-2">
+                        <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                        <span class="sr-only">
+                            Collapse
+                        </span>
+                    </span>
+                    <span class="ml-auto collapsed-icon icon-no-margin mx-2">
+                        <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                        <span class="sr-only">
+                            Expand
+                        </span>
+                    </span>
+                </a>
+                <div class="collapse list-group-item p-0 border-0" role="menu" id="drop-down-menu-1" aria-labelledby="drop-down-1">
+                             <a href="http://www.cs.uwindsor.ca" class="pl-5 bg-light list-group-item list-group-item-action">School of Computer Science</a>
+                             <a href="http://auth.cs.uwindsor.ca" class="pl-5 bg-light list-group-item list-group-item-action">School of Computer Science Authentication</a>
+                             <a href="http://www.uwindsor.ca" class="pl-5 bg-light list-group-item list-group-item-action">University of Windsor</a>
+                             <a href="https://brightspace.uwindsor.ca" class="pl-5 bg-light list-group-item list-group-item-action">Brightspace</a>
+                </div>
+        </div>
+
+    </div>
+</div>
+        <div  class="drawer drawer-left show d-print-none not-initialized" data-region="fixed-drawer" id="theme_boost-drawers-courseindex" data-preference="drawer-open-index" data-state="show-drawer-left" data-forceopen="0" data-close-on-resize="0">
+    <div class="drawerheader">
+        <button
+            class="btn drawertoggle icon-no-margin hidden"
+            data-toggler="drawers"
+            data-action="closedrawer"
+            data-target="theme_boost-drawers-courseindex"
+            data-toggle="tooltip"
+            data-placement="right"
+            title="Close course index"
+        >
+            <i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i>
+        </button>
+    </div>
+    <div class="drawercontent drag-container" data-usertour="scroller">
+                        <nav id="courseindex" class="courseindex">
+    <div id="courseindex-content">
+        <div data-region="loading-placeholder-content" aria-hidden="true" id="63dc56c211df663dc56c211dfb1-course-index-placeholder">
+            <ul class="media-list">
+                <li class="media">
+                    <div class="media-body col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle mr-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li class="media">
+                    <div class="media-body col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle mr-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li class="media">
+                    <div class="media-body col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle mr-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+                <li class="media">
+                    <div class="media-body col-md-6 p-0 d-flex align-items-center">
+                        <div class="bg-pulse-grey rounded-circle mr-2"></div>
+                        <div class="bg-pulse-grey w-100"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    </div>
+</div>
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers show-drawer-left  drag-container">
+        <div id="topofscroll" class="main-inner">
+            <div class="drawer-toggles d-flex">
+                    <div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
+                        <button
+                            class="btn icon-no-margin"
+                            data-toggler="drawers"
+                            data-action="toggle"
+                            data-target="theme_boost-drawers-courseindex"
+                            data-toggle="tooltip"
+                            data-placement="right"
+                            title="Open course index"
+                        >
+                            <span class="sr-only">Open course index</span>
+                            <i class="icon fa fa-list fa-fw " aria-hidden="true"  ></i>
+                        </button>
+                    </div>
+            </div>
+            <header id="page-header" class="header-maxwidth d-print-none">
+    <div class="w-100">
+        <div class="d-flex flex-wrap">
+            <div id="page-navbar">
+                <nav aria-label="Navigation bar">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="https://moodle.cs.uwindsor.ca/course/index.php?categoryid=36"  >2022-2023 Academic Year</a>
+                </li>
+        
+                <li class="breadcrumb-item">
+                    <a href="https://moodle.cs.uwindsor.ca/course/view.php?id=110#section-4"  title="Advanced Object-Oriented Systems Design Using C++">COMP3400-30-R-2023W</a>
+                </li>
+        
+                <li class="breadcrumb-item"><span>Assignment 3</span></li>
+        </ol>
+</nav>
+            </div>
+            <div class="ml-auto d-flex">
+                
+            </div>
+            <div id="course-header">
+                
+            </div>
+        </div>
+        <div class="d-flex align-items-center">
+                    <div class="mr-auto">
+                        <div class="page-context-header"><div class="page-header-image mr-2"><div class="assessment activityiconcontainer modicon_assign"><img class="icon activityicon" aria-hidden="true" src="https://moodle.cs.uwindsor.ca/theme/image.php/boost/assign/1674767866/monologo" alt="" /></div></div><div class="page-header-headings"><div class="text-muted text-uppercase small line-height-3">Assignment</div><h1 class="h2">Assignment 3</h1></div></div>
+                    </div>
+            <div class="header-actions-container ml-auto" data-region="header-actions-container">
+            </div>
+        </div>
+    </div>
+</header>
+            <div id="page-content" class="pb-3 d-print-block">
+                <div id="region-main-box">
+                    <section id="region-main" aria-label="Content">
+
+                        <span class="notifications" id="user-notifications"></span>
+                            <span id="maincontent"></span>
+                            <div class="activity-header" data-for="page-activity-header">
+                                    <span class="sr-only">Completion requirements</span>
+                                    <div data-region="activity-information" data-activityname="Assignment 3" class="activity-information">
+
+            <div class="completion-info" data-region="completion-info">
+                    <div class="automatic-completion-conditions" data-region ="completionrequirements" role="list" aria-label="Completion requirements for Assignment 3">
+                                <span class="badge badge-pill alert-success icon-no-margin" role="listitem" >
+                                    <i class="icon fa fa-check fa-fw " aria-hidden="true"  ></i>
+                                    <strong>Done:</strong> <span class="font-weight-normal">View</span>
+                                </span>
+                                <span class="badge badge-pill badge-light" role="listitem" >
+                                    <strong>To do:</strong> <span class="font-weight-normal">Make a submission</span>
+                                </span>
+                    </div>
+            </div>
+
+    <div data-region="activity-dates" class="activity-dates">
+        <div class="description-inner">
+                <div>
+                    <strong>Opened:</strong> Wednesday, 1 February 2023, 7:00 PM
+                </div>
+                <div>
+                    <strong>Due:</strong> Monday, 13 February 2023, 11:59 PM
+                </div>
+        </div>
+    </div>
+</div>
+                                    <div class="activity-description" id="intro">
+                                        <div class="box py-3 generalbox boxaligncenter"><div class="no-overflow"><h3 dir="ltr" style="text-align: left;">Overview</h3><p dir="ltr" style="text-align: left;">The purpose of this assignment is to explore some object-oriented programming in C++ and a simple use of std::shared_ptr.</p><p dir="ltr" style="text-align: left;">Prof. Q has asked you to write some C++ code to make it easier for the research group to output XML data for which many different XML structures will be needed. To start, Prof. Q has asked you to write code that will output XML documents as follows:</p><div style="margin-left: 30px;" class="editor-indent"><ul><li>There is only one "root" document type called "notes".</li><li>At the top level of the root document, there can be any number of "priority" and "note" elements (i.e., many persons often call elements tags).</li><li>The priority element only contains a single double value.</li><li>The notes element has 4 child elements called "to", "from", "subject", "message" with each having some string data output.</li></ul></div><p>Since this is the start of development Prof. Q has said you can assume perfect input, i.e., there is no need to worry about having the proper XML name structure and escaping. You can also assume all string data is ASCII and there will be no non-printable characters in strings. (This simplifies what you need to do since you don't need to worry about checking strings for proper structures and properly escaping XML output, i.e., you can simply appropriately store and output all strings.)</p><p>Prof. Q has also said the output is not to be formatted to be human-readable. (This means you won't have to worry about newlines and indenting the nested elements, e.g., see Sample Program Output below.)<br></p><p>Finally Prof. Q has said that your code must permit the creation of XML document node structures using object-oriented programming. Such must be done in a way that is easy to add more node structures (for different nodes/document types) later.</p><h3>Task</h3><p>Start by writing these header files which will be used in your code:</p><div style="margin-left: 30px;" class="editor-indent"><pre>#include &lt;cstddef&gt;        // for std::size_t<br>#include &lt;iostream&gt;<br>#include &lt;memory&gt;<br>#include &lt;ostream&gt;<br>#include &lt;string&gt;<br>#include &lt;utility&gt; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// for std::move, std::forward<br>#include &lt;vector&gt;<br></pre></div><p>(Such was provided for convenience so you can quickly focus on object-oriented programming notions in C++. That said, always look things up to learn which headers are needed in your code and to know what you are using / calling.)<br></p><p dir="ltr" style="text-align: left;">Prof. Q realized that you are new at programming in C++ and has provided the definitions to start (i.e., put these in your program immediately after the header files):</p><div style="margin-left: 30px;" class="editor-indent"><pre dir="ltr" style="text-align: left;">class xml_node_base<br>{<br>public:<br>  virtual ~xml_node_base() = default;<br><br>  void output(std::ostream&amp; os) const<br>  {<br>    do_output_open(os);<br>    do_output_body(os);<br>    do_output_close(os);<br>  }<br><br>protected:<br>  virtual void do_output_open(std::ostream&amp; os) const = 0;<br>  virtual void do_output_body(std::ostream&amp;) const { }<br>  virtual void do_output_close(std::ostream&amp; os) const = 0;<br>};<br><br>using xml_node_base_t = std::shared_ptr&lt;xml_node_base&gt;;<br>using xml_node_bases_t = std::vector&lt;xml_node_base_t&gt;;<br><br>template &lt;typename T, typename... Args&gt;<br>inline xml_node_base_t make_xml_node(Args&amp;&amp;... args)<br>{<br>  return std::make_shared&lt;T&gt;(std::forward&lt;Args&gt;(args)...);<br>}<br></pre></div><p dir="ltr" style="text-align: left;">where:</p><div style="margin-left: 30px;" class="editor-indent"><ul><li>xml_node_base is the base class all XML node types are derived from</li><li>Since OOP requires the use of pointers, the xml_node_base_t type alias is defined to be std::shared_ptr&lt;xml_node_base&gt; so that all pointers are managed (and reference counted --although that is not exploited in this assignment).</li><li>Since XML nodes can have children, xml_node_bases_t is defined to be a std::vector&lt;xml_node_base_t&gt; to make it easier to deal with children.</li><li>make_xml_node&lt;T&gt;(args...) is defined so that T is a type and args... are the arguments used to construct an instance of that type. This is done to make it easier to create instances of various XML nodes since traditional/general OOP requires instances to be pointers. (This is not exploited in this assignment --but Prof. Q requires such for future coding efforts.)<br></li></ul></div><p dir="ltr" style="text-align: left;">Within the xml_node_base class:</p><div style="margin-left: 30px;" class="editor-indent"><ul><li>output() is a non-virtual const function that always calls the do_output_*() functions with the stream passed to it.<ul><li>There is no need to make output() virtual as these functions will always be called.</li><li>By defining output(), this simplifies logic relating to producing output. (XML document nodes have open and close elements (tags) as well as data between such. If output() was not defined, one would have to manually call these three functions --which would be a source of programming issues/mistakes/etc. By defining output() such issues are completely avoided since the logic of output is encapsulated (hidden) appropriately with the derived classes (due to protected scope).<br></li></ul></li><li>do_output_body() is not abstract since it is appropriate to have nodes with no data between the opening and closing elements (tags).</li><li>do_output_open() and do_output_close() are defined to be pure virtual (abstract) because each element has its own name (and potentially XML attributes that are not dealt with in this assignment) so derived classes need to define such.</li></ul></div><p dir="ltr" style="text-align: left;">The rest of the "Task" section outlines details concerning each class that must be written. (Your code can be written in the order these classes are given.)</p><h4 dir="ltr" style="text-align: left;">class xml_node</h4><p dir="ltr" style="text-align: left;">An xml_node represents an named element (tag) without any data. Write the code for this class as described below:</p><div style="margin-left: 30px;" class="editor-indent"><ul><li>Define xml_node as a class.</li><li>The xml_node class must inherit virtually and publicly from xml_node_base.<ul><li>ASIDE: You want only ONE instance of xml_node_base so you need to use virtual here. To keep xml_node_base's members' scopes the same, public needs to be used since C++ classes will otherwise inherit privately by default.</li></ul></li><li>In private scope: Declare std::string member variable to hold this node's name;<br></li><li>In public scope: The default constructor must be deleted, write: xml_node() = delete;<ul><li>ASIDE: By writing a constructor or function prototype followed by = delete, you are telling the C++ compiler that such cannot be used, generated, etc. ever. Trying to do so will trigger a compile-time error. The default constructor is being deleted since the user of xml_node must provide a name (i.e., invoke one of the other constructors).<br></li></ul></li><li>In public scope: Write a constructor, xml_node(std::string const&amp; name) where:<ul><li>There is nothing within the constructor body braces --you initialization MUST be before the opening brace of the constructor body!</li><li>In the constructor member initialization list, initialize the private std::string name variable to the std::string parameter passed to the constructor.<br></li></ul></li><li>In protected scope: Override void do_output_open(std::ostream&amp; os) const and:<ul><li>Output via the std::ostream parameter a '&lt;', followed by the private std::string member, followed by a ,&gt;'.<ul><li>e.g., "&lt;note&gt;" (with no quotes of course) would be output if the node's name was "note".<br></li></ul></li></ul></li><li>In protected scope: Override void do_output_close(std::ostream&amp; os) const and:<ul><li>Output via the std::ostream parameter "&lt;/" followed by the private std::string member, followed by a '&gt;'.<ul><li>e.g., "&lt;/note&gt;" (with no quotes of course) would be output if the node's name was "note".<br></li></ul></li></ul></li></ul></div><h4 dir="ltr" style="text-align: left;">class xml_node_with_children</h4><p dir="ltr" style="text-align: left;">xml_node defined a node that has no children or data. There are times when a node will have child nodes. The xml_node_with_children defines an xml_node with children leveraging inheritance. Write the code for this class as described below:<br></p><div style="margin-left: 30px;" class="editor-indent"><ul><li>Define xml_node_with_children as a class.</li><li>The xml_node_with_children class must inherit publicly from the xml_node class. (Do not use virtual.)</li><li>In private scope: Declare a member variable of type xml_node_bases_t to hold the child nodes. (This is referred to as the children data member below.)<br></li><li>In public scope: Delete the default constructor --one should never use this type wihtout passing a std::string name to its constructor.</li><li>In public scope: Define the constructor: xml_node_with_children(std::string const&amp; name) by:<ul><li>having no code in the constructor body,</li><li>after the constructor initialization list, colon first write xml_node{name}&nbsp; (or xml_node(name)) to "call" the parent class' constructor that accepts a string, and,<br><ul><li>ASIDE: This is like using super in Java to invoke a parent class' constructor --except super doesn't exist in C++. (It wouldn't make sense either since C++ supports multiple inheritance. Which class would be called when super was used?)<br></li></ul></li><li>don't worry about initializing the children data member.<ul><li>If you want you can default construct such --but if omitted, the compiler will default construct it for you. :-)<br></li></ul></li></ul></li><li>In public scope: Define the constructor: xml_node_with_children(std::string const&amp; name, std::size_t reserve) by:<ul><li>in the constructor initialization list, invoke the single-parameter std::string constructor in this class by writing xml_node_with_children{name}<br>&nbsp;(you can use braces or parentheses with constructor syntax), and,<br><ul><li>ASIDE: Again, this is like calling another constructor in the same class in Java albeit with different syntax. This is sometimes how you can avoid duplicating code when you have a number of constructors.</li></ul></li><li>in the constructor body, invoke the private children data member's .reserve() function passing in the reserve value to it.<ul><li>ASIDE: The reserve(n) member function in std::vector and some other types allocates RAM sufficient for n entries --but it doesn't create elements. This allows the vector to not have to be resized (and copied/moved internally to do this) unless more then n elements are added to it.<br></li></ul></li></ul></li><li>In public scope: Define the constructor: xml_node_with_children(std::string const&amp; name, xml_node_bases_t children) by:<ul><li>in the constructor initialization list, invoke the parent class' constructor passing the std::string parameter to it,</li><li>in the constructor initialization list, construct the children private data member by moving the xml_node_bases_t parameter passed to the constructor, and,<ul><li>i.e., write children_{std::move(children)} if your private data member is called "children_" and your xml_node_bases_t parameter is called "children".</li><li>The xml_node_bases_t parameter was passed by value --which makes a copy of the original. For efficiency, you want to move the contents of that copy in to the private data member. If you didn't move it, it would be copied and the first copy would be destroyed. That would be a waste/inefficient.<ul><li>ASIDE: FYI, the caller of this constructor could have moved data in to this parameter so the "copy" made isn't always an extra copy. If the argument had its data moved into it, then the "copy" isn't really a copy --otherwise it is.<br></li></ul></li></ul></li><li>the constructor body must be empty.<br></li></ul></li><li>In protected scope, define these two overloads:<ul><li>auto&amp; children() { return children_; };<br>auto const&amp; children() const { return children_; };</li><li>NOTE 1: You cannot call your private data member in this class "children" since this member function uses that name. Rename your private data member if you did call it "children".</li><li>NOTE 2: children_ in these definitions are what I called my private data member. Substitute the name you used.</li><li>NOTE 3: Notice that both of the overloads return references --but the const overload returns a const&amp; since the underlying object is const.<br></li></ul></li><li>In protected scope, override the function void do_output_body(std::ostream&amp; os) const by writing the following code in it:<ul><li>write a range-for loop to iterate through all children (i.e., the private data member variable) with each element's type being auto const&amp; (you want the const&amp; part; auto is just convenience to avoid writing xml_node_bases_t), and within the range-for body, using -&gt; with the element reference variable to call output(os).<ul><li>ASIDE: Recall that std::shared_ptr and other smart pointer types overload * and -&gt; so the object can be used like a pointer. Essentially -&gt;output(os) is invoking xml_node_base's output() function.<br></li></ul></li></ul></li></ul></div><h4 dir="ltr" style="text-align: left;">class value_node&lt;T&gt;</h4><p dir="ltr" style="text-align: left;">In many instances one might want an xml_node with a simple datum. value_node&lt;T&gt; defines itself in terms of an xml_node but adds the ability to output its stored instance of type T in the body. Write the code for this class as described below:<br></p><div style="margin-left: 30px;" class="editor-indent"><ul><li>Define value_node&lt;T&gt; as a class by writing:<ul><li>template &lt;typename T&gt;<br>class value_node<br></li></ul></li><li>The this class must inherit publicly from the xml_node class. (Do not use virtual.)</li><li>In private scope: Define a data member of type T to hold the datum (which is originally passed to the constructor).</li><li>In protected scope: Override void do_output_body(std::ostream&amp; os) const and output the private data member datum to the os stream.</li><li>In public scope: Define the constructor value_node(std::string const&amp; name, T const&amp; v) where:<ul><li>in the constructor initialization list: pass the std::string name parameter to the parent class constructor,<br></li><li>in the constructor initialization list: pass the T parameter to datum (use constructor syntax to do this!), and,<br><ul><li>ASIDE: Don't use std::move() here --T was passed as an lvalue. This will always make a copy. (It is possible to have other constructor overloads that accept rvalue references in order to move when things should be moved so one can have both copying and moving as is appropriate --but such isn't being done here.)<br></li></ul></li><li>ensure the constructor body is empty.<br></li></ul></li></ul></div><h4 dir="ltr" style="text-align: left;">class note</h4><p dir="ltr" style="text-align: left;">The node class is defined in terms of xml_node_with_children except the number and order of children is fixed. This class ensures that invariant and nicely makes it very easy to create Prof. Q's "note" elements!</p><div style="margin-left: 30px;" class="editor-indent"><p dir="ltr" style="text-align: left;">ASIDE: Unlike HTML, XML does not fix the names of its elements (tags) or underlying structure. This class fixes such to something hard-coded. This is okay in a program: one wants to make it easier to use things --and this class makes it easier to create notes (albeit this assignment only outputs stuff --but you get the idea).<br></p></div><p dir="ltr" style="text-align: left;">Write the code for this class as described below:</p><div style="margin-left: 30px;" class="editor-indent"><ul><li>Define note as a class.</li><li>The note class must inherit publicly from xml_node_with_children.</li><li>Everything below is defined in public scope.</li><li>Define a deleted default constructor.</li><li>Define a constructor note(std::string const&amp; to, std::string const&amp; from, std::string const&amp; subject, std::string const&amp; message) as follows:<ul><li>in the constructor initialization list, call the parent class' constructor passing these parameters: "note" and 4,</li><li>in the constructor body, call xml_node_with_children's children() function (you can use this-&gt; or omit such, e.g., writing children() is sufficient) and before the semicolon write:.push_back(make_xml_node&lt;value_node&lt;std::string&gt;&gt;("to",to))<ul><li>i.e.,append to the vector a newly constructed xml_base_node_t (which is of derived type value_node&lt;std::string&gt;)</li></ul></li><li>in the constructor body, do the same as the previous line but instead of "to",to use "from",from</li><li>in the constructor body, do the same as the previous line but instead of "from",from use "subject",subject</li><li>in the constructor body, do the same as the previous line but instead of "subject",subject use "message",message<br></li></ul></li></ul></div><h4 dir="ltr" style="text-align: left;">class root and std::ostream Operator<br></h4><p dir="ltr" style="text-align: left;">As with containers, etc. the actual "document" one wants to hold everything in is special. One should not be permitted to add the document inside of itself (at least in this assignment!). To achieve this while exploiting inheritance in order to make it easy to define things, this class does NOT use public inheritance, instead it uses protected inheritance.</p><div style="margin-left: 30px;" class="editor-indent"><p dir="ltr" style="text-align: left;">ASIDE: Protected inheritance demotes everything that is public in the parent to protected scope. Everything at protected scope remains protected. By not inheriting publicly, a programmer cannot mistakenly pass instance of the root class to something that accepts xml_node_base*, etc. This is because protected inheritance is not a public "is a" relationship for things outside of the root class.<br></p></div><p dir="ltr" style="text-align: left;">Write the code for the root class as described below:</p><div style="margin-left: 30px;" class="editor-indent"><ul><li>Define root as a class.</li><li>The root class must inherit using protected --not public-- access from xml_node_with_children.</li><li>In public scope, write: using xml_node_with_children::xml_node_with_children;<ul><li>This will inherit all of the constructors from the parent class as constructors of this class.</li></ul></li><li>In public scope, write: using xml_node_with_children::output;<br><ul><li>This will promote the parent class' output() function (which was defined in xml_node_base) to PUBLIC scope. (The protected inheritance demoted such to protected scope and this line promotes it to public since it is in the public section.)</li></ul></li><li>In public scope, write: using xml_node_with_children::children;<ul><li>This will promote the parent class' children members to public scope. (These were never declared at public scope and now the root class is making them publicly available in this way.)</li></ul></li></ul></div><p>Write an IOStream operator overload to output the root class as follows:</p><div style="margin-left: 30px;" class="editor-indent"><ul><li>Remember to use std::ostream&amp; and the proper bit shift operator to do this.<br></li><li>Remember the root type must be passed in as const&amp; (you're outputting so treat what you are outputting as read-only!).</li><li>The function body must call r.output() passing in the std::ostream object to such, and, return the std::ostream object.<br></li></ul></div><h4 dir="ltr" style="text-align: left;">main()</h4><p dir="ltr" style="text-align: left;">See the main() given in the Sample Program Run section below. Try out different things with your code and see what they output.<br></p><h4 dir="ltr" style="text-align: left;">Some Comments</h4><p dir="ltr" style="text-align: left;">The above code is not hard but for newcomers to C++, it is perhaps annoying since one will be learning the syntax. and this will inevitably lead to compiler errors. It does help to compile your code frequently (e.g., after every few edits) ensuring there are no issues before adding more code. If you compile the entire program after you've written it, it will take a long while to fix all of the issues --so please don't write everything before compiling it! And remember if you need help, please do ask for help! :-)</p><p dir="ltr" style="text-align: left;">If were doing a more elaborate version of this, you would have had more code to properly escape XML data, ensure all names don't have illegal characters in them (e.g., spaces, control characters, etc.) throw an exception if an illegal name was passed, etc. Such is beyong the scope of one assignment --but it is not hard to see how things can be done.</p><h3 dir="ltr" style="text-align: left;">Sample Program Run</h3><p dir="ltr" style="text-align: left;">Given the following definition of main():</p><div style="margin-left: 30px;" class="editor-indent"><pre dir="ltr" style="text-align: left;">int main()<br>{<br>  root notes{"notes"};<br>  notes.children().push_back(<br>    make_xml_node&lt;note&gt;("Joe", "UPS", "Reminder", "Pick up your package!")<br>  );<br>  notes.children().push_back(<br>    make_xml_node&lt;value_node&lt;double&gt;&gt;("priority",54.23)<br>  );<br>  std::cout &lt;&lt; notes &lt;&lt; '\n';<br>}<br></pre></div><p dir="ltr" style="text-align: left;">you program must output:</p><div style="margin-left: 30px;" class="editor-indent"><pre dir="ltr" style="text-align: left;">&lt;notes&gt;&lt;note&gt;&lt;to&gt;Joe&lt;/to&gt;&lt;from&gt;UPS&lt;/from&gt;&lt;subject&gt;Reminder&lt;/subject&gt;&lt;message&gt;Pick up your package!&lt;/message&gt;&lt;/note&gt;&lt;priority&gt;<br>54.23&lt;/priority&gt;&lt;/notes&gt;<br></pre></div><p dir="ltr" style="text-align: left;">which meets Prof. Q's requirements.</p><p dir="ltr" style="text-align: left;">NOTE: When marking, we reserve the right to replace main() completely with our own code. Ensure your program is correct and try different things. :-)<br></p><h3 dir="ltr" style="text-align: left;">Submitting Your Assignment<br></h3><p dir="ltr" style="text-align: left;">Submit your C++ code (complete with the main() given in the Sample Program Run section --but it is okay if you have more child nodes than what is in the sample program run's main()).<br></p></div></div>
+                                    </div>
+                                </div>
+                        <div role="main"><div class="container-fluid mb-4">
+    <div class="row">
+        <div class="col-xs-6 mr-3">
+                    <div class="singlebutton">
+                        <form method="get" action="https://moodle.cs.uwindsor.ca/mod/assign/view.php" >
+                                <input type="hidden" name="id" value="2115">
+                                <input type="hidden" name="action" value="editsubmission">
+                            <button type="submit" class="btn btn-primary"
+                                id="single_button63dc56c211dfb7"
+                                
+                                
+                                >Add submission</button>
+                        </form>
+                    </div>
+        </div>
+    </div>
+</div><div class="submissionstatustable"><h3>Submission status</h3><div class="box py-3 boxaligncenter submissionsummarytable"><div class="table-responsive"><table class="generaltable table-bordered">
+<tbody><tr class="">
+<th class="cell c0" style="" scope="row">Attempt number</th>
+<td class="cell c1 lastcol" style="">This is attempt 1.</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Submission status</th>
+<td class="cell c1 lastcol" style="">No submissions have been made yet</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Grading status</th>
+<td class="submissionnotgraded cell c1 lastcol" style="">Not marked</td>
+</tr>
+<tr class="">
+<th class="cell c0" style="" scope="row">Time remaining</th>
+<td class="timeremaining cell c1 lastcol" style="">11 days 4 hours remaining</td>
+</tr>
+<tr class="lastrow">
+<th class="cell c0" style="" scope="row">Grading criteria</th>
+<td class="cell c1 lastcol" style=""><div class="box py-3 gradingform_rubric-description"><p>This rubric is a general rubric for compiled programming languages. <br /></p><p>Normally the marker will adhere to the rubric, but, the marker reserves the right to add/subtract marks based on the quality of the work provided. (Such overrides will be noted in the feedback comments.)<br /></p></div><div id="rubric-rubric" class="clearfix gradingform_rubric editor preview"><table class="criteria" id="rubric-criteria" aria-label="Rubric"><tr class="criterion first even" id="rubric-criteria-1812"><td class="description" id="rubric-criteria-1812-description-cell" tabindex="0" aria-label="Criterion Late Penalty (Deduction)">Late Penalty (Deduction)</td><td class="levels"><table id="rubric-criteria-1812-levels-table" aria-label="Levels group"><tr id="rubric-criteria-1812-levels"><td id="rubric-criteria-1812-levels-5407" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Late. All marks deducted., -10 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1812-levels-5407-definition-container">Late. All marks deducted.</div><div class="score d-inline"><span id="rubric-criteria-1812-levels-5407-score" class="scorevalue">-10</span> points</div></div></td><td id="rubric-criteria-1812-levels-5408" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Late but submitted within 24 hours of deadline or late with minor deduction., -2 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1812-levels-5408-definition-container">Late but submitted within 24 hours of deadline or late with minor deduction.</div><div class="score d-inline"><span id="rubric-criteria-1812-levels-5408-score" class="scorevalue">-2</span> points</div></div></td><td id="rubric-criteria-1812-levels-5409" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level Not late or late without penalty (as decided by or with permission of  instructor)., 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1812-levels-5409-definition-container">Not late or late without penalty (as decided by or with permission of  instructor).</div><div class="score d-inline"><span id="rubric-criteria-1812-levels-5409-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion odd" id="rubric-criteria-1813"><td class="description" id="rubric-criteria-1813-description-cell" tabindex="0" aria-label="Criterion Compiler Warnings (Deduction)">Compiler Warnings (Deduction)</td><td class="levels"><table id="rubric-criteria-1813-levels-table" aria-label="Levels group"><tr id="rubric-criteria-1813-levels"><td id="rubric-criteria-1813-levels-5410" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Too many compiler warnings., -2 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1813-levels-5410-definition-container">Too many compiler warnings.</div><div class="score d-inline"><span id="rubric-criteria-1813-levels-5410-score" class="scorevalue">-2</span> points</div></div></td><td id="rubric-criteria-1813-levels-5411" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level Some compiler warnings., -1 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1813-levels-5411-definition-container">Some compiler warnings.</div><div class="score d-inline"><span id="rubric-criteria-1813-levels-5411-score" class="scorevalue">-1</span> points</div></div></td><td id="rubric-criteria-1813-levels-5412" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No compiler warnings., 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1813-levels-5412-definition-container">No compiler warnings.</div><div class="score d-inline"><span id="rubric-criteria-1813-levels-5412-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion even" id="rubric-criteria-1814"><td class="description" id="rubric-criteria-1814-description-cell" tabindex="0" aria-label="Criterion Compiler Errors (Deduction)">Compiler Errors (Deduction)</td><td class="levels"><table id="rubric-criteria-1814-levels-table" aria-label="Levels group"><tr id="rubric-criteria-1814-levels"><td id="rubric-criteria-1814-levels-5413" class="text-break level first even" style="width: 50%;" tabindex="0" aria-label="Level Code fails to compile due to compiler errors., -10 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1814-levels-5413-definition-container">Code fails to compile due to compiler errors.</div><div class="score d-inline"><span id="rubric-criteria-1814-levels-5413-score" class="scorevalue">-10</span> points</div></div></td><td id="rubric-criteria-1814-levels-5414" class="text-break level last odd" style="width: 50%;" tabindex="0" aria-label="Level No compiler errors., 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1814-levels-5414-definition-container">No compiler errors.</div><div class="score d-inline"><span id="rubric-criteria-1814-levels-5414-score" class="scorevalue">0</span> points</div></div></td></tr></table></td></tr><tr class="criterion odd" id="rubric-criteria-1815"><td class="description" id="rubric-criteria-1815-description-cell" tabindex="0" aria-label="Criterion Packaging">Packaging</td><td class="levels"><table id="rubric-criteria-1815-levels-table" aria-label="Levels group"><tr id="rubric-criteria-1815-levels"><td id="rubric-criteria-1815-levels-5415" class="text-break level first even" style="width: 50%;" tabindex="0" aria-label="Level Not all files are provided and/or not all targets are built cleanly and completely., 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1815-levels-5415-definition-container">Not all files are provided and/or not all targets are built cleanly and completely.</div><div class="score d-inline"><span id="rubric-criteria-1815-levels-5415-score" class="scorevalue">0</span> points</div></div></td><td id="rubric-criteria-1815-levels-5416" class="text-break level last odd" style="width: 50%;" tabindex="0" aria-label="Level All files are provided. All targets are built cleanly and completely., 1 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1815-levels-5416-definition-container">All files are provided. All targets are built cleanly and completely.</div><div class="score d-inline"><span id="rubric-criteria-1815-levels-5416-score" class="scorevalue">1</span> points</div></div></td></tr></table></td></tr><tr class="criterion even" id="rubric-criteria-1816"><td class="description" id="rubric-criteria-1816-description-cell" tabindex="0" aria-label="Criterion Code Structure, Names, and Comments">Code Structure, Names, and Comments</td><td class="levels"><table id="rubric-criteria-1816-levels-table" aria-label="Levels group"><tr id="rubric-criteria-1816-levels"><td id="rubric-criteria-1816-levels-5417" class="text-break level first even" style="width: 50%;" tabindex="0" aria-label="Level Poor code structure, meaningful symbol names, and comments., 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1816-levels-5417-definition-container">Poor code structure, meaningful symbol names, and comments.</div><div class="score d-inline"><span id="rubric-criteria-1816-levels-5417-score" class="scorevalue">0</span> points</div></div></td><td id="rubric-criteria-1816-levels-5418" class="text-break level last odd" style="width: 50%;" tabindex="0" aria-label="Level Satisfactory code structure, meaningful symbol names, and comments., 1 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1816-levels-5418-definition-container">Satisfactory code structure, meaningful symbol names, and comments.</div><div class="score d-inline"><span id="rubric-criteria-1816-levels-5418-score" class="scorevalue">1</span> points</div></div></td></tr></table></td></tr><tr class="criterion odd" id="rubric-criteria-1817"><td class="description" id="rubric-criteria-1817-description-cell" tabindex="0" aria-label="Criterion Actual or Possible Run-Time Errors/Issues in Code">Actual or Possible Run-Time Errors/Issues in Code</td><td class="levels"><table id="rubric-criteria-1817-levels-table" aria-label="Levels group"><tr id="rubric-criteria-1817-levels"><td id="rubric-criteria-1817-levels-5419" class="text-break level first even" style="width: 33%;" tabindex="0" aria-label="Level Too many or major run-time errors/issues occur or can occur., 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1817-levels-5419-definition-container">Too many or major run-time errors/issues occur or can occur.</div><div class="score d-inline"><span id="rubric-criteria-1817-levels-5419-score" class="scorevalue">0</span> points</div></div></td><td id="rubric-criteria-1817-levels-5420" class="text-break level odd" style="width: 33%;" tabindex="0" aria-label="Level A small number of minor run-time errors/issues occur or can occur., 1 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1817-levels-5420-definition-container">A small number of minor run-time errors/issues occur or can occur.</div><div class="score d-inline"><span id="rubric-criteria-1817-levels-5420-score" class="scorevalue">1</span> points</div></div></td><td id="rubric-criteria-1817-levels-5421" class="text-break level last even" style="width: 33%;" tabindex="0" aria-label="Level No run-time errors/issues occur or can occur., 2 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1817-levels-5421-definition-container">No run-time errors/issues occur or can occur.</div><div class="score d-inline"><span id="rubric-criteria-1817-levels-5421-score" class="scorevalue">2</span> points</div></div></td></tr></table></td></tr><tr class="criterion even" id="rubric-criteria-1818"><td class="description" id="rubric-criteria-1818-description-cell" tabindex="0" aria-label="Criterion Unit Tests">Unit Tests</td><td class="levels"><table id="rubric-criteria-1818-levels-table" aria-label="Levels group"><tr id="rubric-criteria-1818-levels"><td id="rubric-criteria-1818-levels-5422" class="text-break level first even" style="width: 25%;" tabindex="0" aria-label="Level Too many tests (provided or not) don&#039;t pass having input or output processing and correctness issues., 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1818-levels-5422-definition-container">Too many tests (provided or not) don&#039;t pass having input or output processing and correctness issues.</div><div class="score d-inline"><span id="rubric-criteria-1818-levels-5422-score" class="scorevalue">0</span> points</div></div></td><td id="rubric-criteria-1818-levels-5423" class="text-break level odd" style="width: 25%;" tabindex="0" aria-label="Level Some tests (provided or not) pass and have no input or output processing and correctness issues., 1 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1818-levels-5423-definition-container">Some tests (provided or not) pass and have no input or output processing and correctness issues.</div><div class="score d-inline"><span id="rubric-criteria-1818-levels-5423-score" class="scorevalue">1</span> points</div></div></td><td id="rubric-criteria-1818-levels-5424" class="text-break level even" style="width: 25%;" tabindex="0" aria-label="Level Most tests (provided or not) pass and have no input or output processing and correctness issues., 2 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1818-levels-5424-definition-container">Most tests (provided or not) pass and have no input or output processing and correctness issues.</div><div class="score d-inline"><span id="rubric-criteria-1818-levels-5424-score" class="scorevalue">2</span> points</div></div></td><td id="rubric-criteria-1818-levels-5425" class="text-break level last odd" style="width: 25%;" tabindex="0" aria-label="Level All tests (provided or not) pass and have no input or output processing and correctness issues., 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1818-levels-5425-definition-container">All tests (provided or not) pass and have no input or output processing and correctness issues.</div><div class="score d-inline"><span id="rubric-criteria-1818-levels-5425-score" class="scorevalue">3</span> points</div></div></td></tr></table></td></tr><tr class="criterion last odd" id="rubric-criteria-1819"><td class="description" id="rubric-criteria-1819-description-cell" tabindex="0" aria-label="Criterion Assignment Requirements Conformance">Assignment Requirements Conformance</td><td class="levels"><table id="rubric-criteria-1819-levels-table" aria-label="Levels group"><tr id="rubric-criteria-1819-levels"><td id="rubric-criteria-1819-levels-5426" class="text-break level first even" style="width: 25%;" tabindex="0" aria-label="Level Too many requirements were not successfully  implemented., 0 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1819-levels-5426-definition-container">Too many requirements were not successfully  implemented.</div><div class="score d-inline"><span id="rubric-criteria-1819-levels-5426-score" class="scorevalue">0</span> points</div></div></td><td id="rubric-criteria-1819-levels-5427" class="text-break level odd" style="width: 25%;" tabindex="0" aria-label="Level Some requirements were successfully implemented., 1 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1819-levels-5427-definition-container">Some requirements were successfully implemented.</div><div class="score d-inline"><span id="rubric-criteria-1819-levels-5427-score" class="scorevalue">1</span> points</div></div></td><td id="rubric-criteria-1819-levels-5428" class="text-break level even" style="width: 25%;" tabindex="0" aria-label="Level Most requirements were successfully implemented., 2 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1819-levels-5428-definition-container">Most requirements were successfully implemented.</div><div class="score d-inline"><span id="rubric-criteria-1819-levels-5428-score" class="scorevalue">2</span> points</div></div></td><td id="rubric-criteria-1819-levels-5429" class="text-break level last odd" style="width: 25%;" tabindex="0" aria-label="Level All requirements were successfully implemented., 3 points."><div class="level-wrapper"><div class="definition" id="rubric-criteria-1819-levels-5429-definition-container">All requirements were successfully implemented.</div><div class="score d-inline"><span id="rubric-criteria-1819-levels-5429-score" class="scorevalue">3</span> points</div></div></td></tr></table></td></tr></table></div></td>
+</tr>
+</tbody>
+</table>
+</div></div></div></div>
+                        
+                        
+
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <footer id="page-footer" class="footer-popover bg-white">
+            <div data-region="footer-container-popover">
+                <button class="btn btn-icon bg-secondary icon-no-margin btn-footer-popover" data-action="footer-popover" aria-label="Show footer">
+                    <i class="icon fa fa-question fa-fw " aria-hidden="true"  ></i>
+                </button>
+            </div>
+            <div class="footer-content-popover container" data-region="footer-content-popover">
+                    <div class="footer-section p-3 border-bottom">
+        
+        
+                            <div class="footer-support-link"><a href="https://moodle.cs.uwindsor.ca/user/contactsitesupport.php"><i class="icon fa fa-envelope-o fa-fw " aria-hidden="true"  ></i>Contact site support</a></div>
+                    </div>
+                <div class="footer-section p-3 border-bottom">
+                    <div class="logininfo">
+                        <div class="logininfo">You are logged in as <a href="https://moodle.cs.uwindsor.ca/user/profile.php?id=16893" title="View profile">Abdul Rehman Arif</a> (<a href="https://moodle.cs.uwindsor.ca/login/logout.php?sesskey=THR1FF1D4H">Log out</a>)</div>
+                    </div>
+                    <div class="tool_usertours-resettourcontainer">
+                    </div>
+        
+                    <div class="tool_dataprivacy"><a href="https://moodle.cs.uwindsor.ca/admin/tool/dataprivacy/summary.php">Data retention summary</a></div><a href="https://download.moodle.org/mobile?version=2022112801&amp;lang=en&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile">Get the mobile app</a>
+                    
+<p style="text-align: center">All user-generated content, posts, and submissions are copyright by their respective author(s).<br />All course materials, activities, etc. are copyright by their respective author(s).<br />Copyright &copy; 2013-2023. All Rights Reserved.</p><script>
+//<![CDATA[
+var require = {
+    baseUrl : 'https://moodle.cs.uwindsor.ca/lib/requirejs.php/1674767866/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://moodle.cs.uwindsor.ca/lib/javascript.php/1674767866/lib/jquery/jquery-3.6.1.min',
+        jqueryui: 'https://moodle.cs.uwindsor.ca/lib/javascript.php/1674767866/lib/jquery/ui-1.13.2/jquery-ui.min',
+        jqueryprivate: 'https://moodle.cs.uwindsor.ca/lib/javascript.php/1674767866/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script src="https://moodle.cs.uwindsor.ca/lib/javascript.php/1674767866/lib/requirejs/require.min.js"></script>
+<script>
+//<![CDATA[
+M.util.js_pending("core/first");
+require(['core/first'], function() {
+require(['core/prefetch'])
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp('en');
+});;
+M.util.js_pending('core_courseformat/courseeditor'); require(['core_courseformat/courseeditor'], function(amd) {amd.setViewFormat("110", {"editing":false,"supportscomponents":true,"statekey":"1675331862_1675384514"}); M.util.js_complete('core_courseformat/courseeditor');});;
+
+require(['core_courseformat/local/courseindex/placeholder'], function(component) {
+    component.init('63dc56c211df663dc56c211dfb1-course-index-placeholder');
+});
+;
+
+require(['core_courseformat/local/courseindex/drawer'], function(component) {
+    component.init('courseindex');
+});
+;
+M.util.js_pending('core_courseformat/local/content/activity_header'); require(['core_courseformat/local/content/activity_header'], function(amd) {amd.init(); M.util.js_complete('core_courseformat/local/content/activity_header');});;
+
+    require(['core/moremenu'], function(moremenu) {
+        moremenu(document.querySelector('#moremenu-63dc56c2214c8-navbar-nav'));
+    });
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, Controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new Controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(
+[
+    'jquery',
+    'core_message/message_popover'
+],
+function(
+    $,
+    Popover
+) {
+    var toggle = $('#message-drawer-toggle-63dc56c22722663dc56c211dfb4');
+    Popover.init(toggle);
+});
+;
+
+    require(['core/usermenu'], function(UserMenu) {
+        UserMenu.init();
+    });
+;
+
+require(['theme_boost/drawers']);
+;
+
+require(['theme_boost/drawers']);
+;
+
+require(['theme_boost/footer-popover'], function(FooterPopover) {
+    FooterPopover.init();
+});
+;
+
+require(['jquery', 'core_message/message_drawer'], function($, MessageDrawer) {
+    var root = $('#message-drawer-63dc56c229ffa63dc56c211dfb5');
+    MessageDrawer.init(root, '63dc56c229ffa63dc56c211dfb5', false);
+});
+;
+
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader', 'theme_boost/drawer'], function(Loader, Drawer) {
+    Drawer.init();
+    M.util.js_complete('theme_boost/loader');
+});
+;
+M.util.js_pending('core/notification'); require(['core/notification'], function(amd) {amd.init(49778, []); M.util.js_complete('core/notification');});;
+M.util.js_pending('core/log'); require(['core/log'], function(amd) {amd.setConfig({"level":"warn"}); M.util.js_complete('core/log');});;
+M.util.js_pending('core/page_global'); require(['core/page_global'], function(amd) {amd.init(); M.util.js_complete('core/page_global');});;
+M.util.js_pending('core/utility'); require(['core/utility'], function(amd) {M.util.js_complete('core/utility');});
+    M.util.js_complete("core/first");
+});
+//]]>
+</script>
+<script>
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Last modified","name":"Name","error":"Error","info":"Information","yes":"Yes","no":"No","ok":"OK","cancel":"Cancel","confirm":"Confirm","areyousure":"Are you sure?","closebuttontitle":"Close","unknownerror":"Unknown error","file":"File","url":"URL","collapseall":"Collapse all","expandall":"Expand all"},"repository":{"type":"Type","size":"Size","invalidjson":"Invalid JSON string","nofilesattached":"No files attached","filepicker":"File picker","logout":"Logout","nofilesavailable":"No files available","norepositoriesavailable":"Sorry, none of your current repositories can return files in the required format.","fileexistsdialogheader":"File exists","fileexistsdialog_editor":"A file with that name has already been attached to the text you are editing.","fileexistsdialog_filemanager":"A file with that name has already been attached","renameto":"Rename to \"{$a}\"","referencesexist":"There are {$a} links to this file","select":"Select"},"admin":{"confirmdeletecomments":"You are about to delete comments, are you sure?","confirmation":"Confirmation"},"debug":{"debuginfo":"Debug info","line":"Line","stacktrace":"Stack trace"},"langconfig":{"labelsep":": "}};
+//]]>
+</script>
+<script>
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"MathJax.Hub.Config({\r\n    config: [\"Accessible.js\", \"Safe.js\"],\r\n    errorSettings: { message: [\"!\"] },\r\n    skipStartupTypeset: true,\r\n    messageStyle: \"none\"\r\n});\r\n","lang":"en"});
+});
+Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random63dc56c211dfb8'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random63dc56c211dfb8'); });
+})();
+//]]>
+</script>
+
+                </div>
+                <div class="footer-section p-3">
+                    <div>Powered by <a href="https://moodle.com">Moodle</a></div>
+                </div>
+            </div>
+        
+            <div class="footer-content-debugging footer-dark bg-dark text-light">
+                <div class="container-fluid footer-dark-inner">
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div
+    id="drawer-63dc56c229ffa63dc56c211dfb5"
+    class=" drawer bg-white hidden"
+    aria-expanded="false"
+    aria-hidden="true"
+    data-region="right-hand-drawer"
+    role="region"
+    tabindex="0"
+>
+            <div id="message-drawer-63dc56c229ffa63dc56c211dfb5" class="message-app" data-region="message-drawer" role="region">
+            <div class="closewidget text-right pr-2">
+                <a class="text-dark btn-link" data-action="closedrawer" href="#"
+                   title="Close" aria-label="Close"
+                >
+                    <i class="icon fa fa-window-close fa-fw " aria-hidden="true"  ></i>
+                </a>
+            </div>
+            <div class="header-container position-relative" data-region="header-container">
+                <div class="hidden border-bottom p-1 px-sm-2" aria-hidden="true" data-region="view-contacts">
+                    <div class="d-flex align-items-center">
+                        <div class="align-self-stretch">
+                            <a class="h-100 d-flex align-items-center mr-2" href="#" data-route-back role="button">
+                                <div class="icon-back-in-drawer">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"  ></i></span>
+                                    <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"  ></i></span>
+                                </div>
+                                <div class="icon-back-in-app">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i></span>
+                                </div>                            </a>
+                        </div>
+                        <div>
+                            Contacts
+                        </div>
+                        <div class="ml-auto">
+                            <a href="#" data-route="view-search" role="button" aria-label="Search">
+                                <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+                <div
+                    class="hidden bg-white position-relative border-bottom p-1 px-sm-2"
+                    aria-hidden="true"
+                    data-region="view-conversation"
+                >
+                    <div class="hidden" data-region="header-content"></div>
+                    <div class="hidden" data-region="header-edit-mode">
+                        
+                        <div class="d-flex p-2 align-items-center">
+                            Messages selected:
+                            <span class="ml-1" data-region="message-selected-court">1</span>
+                            <button type="button" class="ml-auto close" aria-label="Cancel message selection"
+                                data-action="cancel-edit-mode">
+                                    <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div data-region="header-placeholder">
+                        <div class="d-flex">
+                            <div
+                                class="ml-2 rounded-circle bg-pulse-grey align-self-center"
+                                style="height: 38px; width: 38px"
+                            >
+                            </div>
+                            <div class="ml-2 " style="flex: 1">
+                                <div
+                                    class="mt-1 bg-pulse-grey w-75"
+                                    style="height: 16px;"
+                                >
+                                </div>
+                            </div>
+                            <div
+                                class="ml-2 bg-pulse-grey align-self-center"
+                                style="height: 16px; width: 20px"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden position-absolute z-index-1"
+                        data-region="confirm-dialogue-container"
+                        style="top: 0; bottom: -1px; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+                    ></div>
+                </div>                <div class="border-bottom p-1 px-sm-2" aria-hidden="false"  data-region="view-overview">
+                    <div class="d-flex align-items-center">
+                        <div class="input-group simplesearchform">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Search"
+                                aria-label="Search"
+                                data-region="view-overview-search-input"
+                            >
+                            <div class="input-group-append">
+                                <span class="icon-no-margin btn btn-submit">
+                                    <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="ml-2">
+                            <a
+                                href="#"
+                                data-route="view-settings"
+                                data-route-param="16893"
+                                aria-label="Settings"
+                                role="button"
+                            >
+                                <i class="icon fa fa-cog fa-fw " aria-hidden="true"  ></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="text-right mt-sm-3">
+                        <a href="#" data-route="view-contacts" role="button">
+                            <i class="icon fa fa-user fa-fw " aria-hidden="true"  ></i>
+                            Contacts
+                            <span
+                                class="badge badge-primary bg-primary ml-2 hidden"
+                                data-region="contact-request-count"
+                            >
+                                <span aria-hidden="true">0</span>
+                                <span class="sr-only">There are 0 pending contact requests</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hidden border-bottom p-1 px-sm-2 view-search"  aria-hidden="true" data-region="view-search">
+                    <div class="d-flex align-items-center">
+                        <a
+                            class="mr-2 align-self-stretch d-flex align-items-center"
+                            href="#"
+                            data-route-back
+                            data-action="cancel-search"
+                            role="button"
+                        >
+                            <div class="icon-back-in-drawer">
+                                <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"  ></i></span>
+                                <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"  ></i></span>
+                            </div>
+                            <div class="icon-back-in-app">
+                                <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i></span>
+                            </div>                        </a>
+                        <div class="input-group simplesearchform">
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Search"
+                                aria-label="Search"
+                                data-region="search-input"
+                            >
+                            <div class="input-group-append">
+                                <button
+                                    class="btn btn-submit icon-no-margin"
+                                    type="button"
+                                    data-action="search"
+                                    aria-label="Search"
+                                >
+                                    <span data-region="search-icon-container">
+                                        <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                                    </span>
+                                    <span class="hidden" data-region="loading-icon-container">
+                                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="hidden border-bottom p-1 px-sm-2 pb-sm-3" aria-hidden="true" data-region="view-settings">
+                    <div class="d-flex align-items-center">
+                        <div class="align-self-stretch" >
+                            <a class="h-100 d-flex mr-2 align-items-center" href="#" data-route-back role="button">
+                                <div class="icon-back-in-drawer">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"  ></i></span>
+                                    <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"  ></i></span>
+                                </div>
+                                <div class="icon-back-in-app">
+                                    <span class="dir-rtl-hide"><i class="icon fa fa-times fa-fw " aria-hidden="true"  ></i></span>
+                                </div>                            </a>
+                        </div>
+                        <div>
+                            Settings
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body-container position-relative" data-region="body-container">
+                
+                <div
+                    class="hidden"
+                    data-region="view-contact"
+                    aria-hidden="true"
+                >
+                    <div class="p-2 pt-3" data-region="content-container"></div>
+                </div>                <div class="hidden h-100" data-region="view-contacts" aria-hidden="true" data-user-id="16893">
+                    <div class="d-flex flex-column h-100">
+                        <div class="p-3 border-bottom">
+                            <ul class="nav nav-pills nav-fill" role="tablist">
+                                <li class="nav-item">
+                                    <a
+                                        id="contacts-tab-63dc56c229ffa63dc56c211dfb5"
+                                        class="nav-link active"
+                                        href="#contacts-tab-panel-63dc56c229ffa63dc56c211dfb5"
+                                        data-toggle="tab"
+                                        data-action="show-contacts-section"
+                                        role="tab"
+                                        aria-controls="contacts-tab-panel-63dc56c229ffa63dc56c211dfb5"
+                                        aria-selected="true"
+                                    >
+                                        Contacts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        id="requests-tab-63dc56c229ffa63dc56c211dfb5"
+                                        class="nav-link"
+                                        href="#requests-tab-panel-63dc56c229ffa63dc56c211dfb5"
+                                        data-toggle="tab"
+                                        data-action="show-requests-section"
+                                        role="tab"
+                                        aria-controls="requests-tab-panel-63dc56c229ffa63dc56c211dfb5"
+                                        aria-selected="false"
+                                    >
+                                        Requests
+                                        <span class="badge badge-primary bg-primary ml-2 hidden"
+                                            data-region="contact-request-count"
+                                        >
+                                            <span aria-hidden="true">0</span>
+                                            <span class="sr-only">There are 0 pending contact requests</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content d-flex flex-column h-100">
+                                            <div
+                    class="tab-pane fade show active h-100 lazy-load-list"
+                    aria-live="polite"
+                    data-region="lazy-load-list"
+                    data-user-id="16893"
+                                        id="contacts-tab-panel-63dc56c229ffa63dc56c211dfb5"
+                    data-section="contacts"
+                    role="tabpanel"
+                    aria-labelledby="contacts-tab-63dc56c229ffa63dc56c211dfb5"
+
+                >
+                    
+                    <div class="hidden text-center p-2" data-region="empty-message-container">
+                        No contacts
+                    </div>
+                    <div class="hidden list-group" data-region="content-container">
+                        
+                    </div>
+                    <div class="list-group" data-region="placeholder-container">
+                        
+                    </div>
+                    <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                    </div>
+                </div>
+                
+                                            <div
+                    class="tab-pane fade h-100 lazy-load-list"
+                    aria-live="polite"
+                    data-region="lazy-load-list"
+                    data-user-id="16893"
+                                        id="requests-tab-panel-63dc56c229ffa63dc56c211dfb5"
+                    data-section="requests"
+                    role="tabpanel"
+                    aria-labelledby="requests-tab-63dc56c229ffa63dc56c211dfb5"
+
+                >
+                    
+                    <div class="hidden text-center p-2" data-region="empty-message-container">
+                        No contact requests
+                    </div>
+                    <div class="hidden list-group" data-region="content-container">
+                        
+                    </div>
+                    <div class="list-group" data-region="placeholder-container">
+                        
+                    </div>
+                    <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                        <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div
+                    class="view-conversation hidden h-100"
+                    aria-hidden="true"
+                    data-region="view-conversation"
+                    data-user-id="16893"
+                    data-midnight="1675314000"
+                    data-message-poll-min="10"
+                    data-message-poll-max="120"
+                    data-message-poll-after-max="300"
+                    style="overflow-y: auto; overflow-x: hidden"
+                >
+                    <div class="position-relative h-100" data-region="content-container" style="overflow-y: auto; overflow-x: hidden">
+                        <div class="content-message-container hidden h-100 px-2 pt-0" data-region="content-message-container" role="log" style="overflow-y: auto; overflow-x: hidden">
+                            <div class="py-3 sticky-top z-index-1 border-bottom text-center hidden" data-region="contact-request-sent-message-container">
+                                <p class="m-0">Contact request sent</p>
+                                <p class="font-italic font-weight-light" data-region="text"></p>
+                            </div>
+                            <div class="p-3 text-center hidden" data-region="self-conversation-message-container">
+                                <p class="m-0">Personal space</p>
+                                <p class="font-italic font-weight-light" data-region="text">Save draft messages, links, notes etc. to access later.</p>
+                           </div>
+                            <div class="hidden text-center p-3" data-region="more-messages-loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+                        </div>
+                        <div class="p-4 w-100 h-100 hidden position-absolute z-index-1" data-region="confirm-dialogue-container" style="top: 0; background: rgba(0,0,0,0.3);">
+                            
+                            <div class="p-3 bg-white" data-region="confirm-dialogue" role="alert">
+                                <p class="text-muted" data-region="dialogue-text"></p>
+                                <div class="mb-2 custom-control custom-checkbox hidden" data-region="delete-messages-for-all-users-toggle-container">
+                                    <input type="checkbox" class="custom-control-input" id="delete-messages-for-all-users" data-region="delete-messages-for-all-users-toggle">
+                                    <label class="custom-control-label text-muted" for="delete-messages-for-all-users">
+                                        Delete for me and for everyone else
+                                    </label>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-block">
+                                    <span data-region="dialogue-button-text">Block</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-unblock">
+                                    <span data-region="dialogue-button-text">Unblock</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-remove-contact">
+                                    <span data-region="dialogue-button-text">Remove</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-add-contact">
+                                    <span data-region="dialogue-button-text">Add</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-selected-messages">
+                                    <span data-region="dialogue-button-text">Delete</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-conversation">
+                                    <span data-region="dialogue-button-text">Delete</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="request-add-contact">
+                                    <span data-region="dialogue-button-text">Send contact request</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block hidden" data-action="accept-contact-request">
+                                    <span data-region="dialogue-button-text">Accept and add to contacts</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-block hidden" data-action="decline-contact-request">
+                                    <span data-region="dialogue-button-text">Decline</span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                                <button type="button" class="btn btn-primary btn-block" data-action="okay-confirm">OK</button>
+                                <button type="button" class="btn btn-secondary btn-block" data-action="cancel-confirm">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="px-2 pb-2 pt-0" data-region="content-placeholder">
+                            <div class="h-100 d-flex flex-column">
+                                <div
+                                    class="px-2 pb-2 pt-0 bg-light h-100"
+                                    style="overflow-y: auto"
+                                >
+                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                    <div class="mt-4">
+                                        <div class="mb-4">
+                                            <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                        <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="mr-2">
+                                                    <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                                </div>
+                                                <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                                <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                            </div>
+                                            <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                            <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                        </div>
+                                    </div>                                </div>
+                            </div>                        </div>
+                    </div>
+                </div>
+                
+                <div
+                    class="hidden"
+                    aria-hidden="true"
+                    data-region="view-group-info"
+                >
+                    <div
+                        class="pt-3 h-100 d-flex flex-column"
+                        data-region="group-info-content-container"
+                        style="overflow-y: auto"
+                    ></div>
+                </div>                <div class="h-100 view-overview-body" aria-hidden="false" data-region="view-overview"  data-user-id="16893">
+                    <div id="message-drawer-view-overview-container-63dc56c229ffa63dc56c211dfb5" class="d-flex flex-column h-100" style="overflow-y: auto">
+                            
+                            
+                            <div
+                                class="section border-0 card rounded-0"
+                                data-region="view-overview-favourites"
+                            >
+                                <div id="view-overview-favourites-toggle" class="card-header rounded-0" data-region="toggle">
+                                    <button
+                                        class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex rounded-0 align-items-center overview-section-toggle collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#view-overview-favourites-target-63dc56c229ffa63dc56c211dfb5"
+                                        aria-expanded="false"
+                                        aria-controls="view-overview-favourites-target-63dc56c229ffa63dc56c211dfb5"
+                                    >
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="font-weight-bold">Starred</span>
+                                        <small class="hidden ml-1" data-region="section-total-count-container">
+                                            (<span aria-hidden="true" data-region="section-total-count"></span><span class="sr-only"> total conversations</span>)
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                        </span>
+                                        <span
+                                            class="hidden badge badge-pill badge-primary ml-auto bg-primary"
+                                            data-region="section-unread-count"
+                                        >
+                                            <span aria-hidden="true"></span>
+                                            <span class="sr-only">There are  unread conversations</span>
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div
+                                class="collapse border-bottom  lazy-load-list"
+                                aria-live="polite"
+                                data-region="lazy-load-list"
+                                data-user-id="16893"
+                                            id="view-overview-favourites-target-63dc56c229ffa63dc56c211dfb5"
+            aria-labelledby="view-overview-favourites-toggle"
+            data-parent="#message-drawer-view-overview-container-63dc56c229ffa63dc56c211dfb5"
+
+                            >
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No starred conversations</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                            
+                            
+                            <div
+                                class="section border-0 card rounded-0"
+                                data-region="view-overview-group-messages"
+                            >
+                                <div id="view-overview-group-messages-toggle" class="card-header rounded-0" data-region="toggle">
+                                    <button
+                                        class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex rounded-0 align-items-center overview-section-toggle collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#view-overview-group-messages-target-63dc56c229ffa63dc56c211dfb5"
+                                        aria-expanded="false"
+                                        aria-controls="view-overview-group-messages-target-63dc56c229ffa63dc56c211dfb5"
+                                    >
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="font-weight-bold">Group</span>
+                                        <small class="hidden ml-1" data-region="section-total-count-container">
+                                            (<span aria-hidden="true" data-region="section-total-count"></span><span class="sr-only"> total conversations</span>)
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                        </span>
+                                        <span
+                                            class="hidden badge badge-pill badge-primary ml-auto bg-primary"
+                                            data-region="section-unread-count"
+                                        >
+                                            <span aria-hidden="true"></span>
+                                            <span class="sr-only">There are  unread conversations</span>
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div
+                                class="collapse border-bottom  lazy-load-list"
+                                aria-live="polite"
+                                data-region="lazy-load-list"
+                                data-user-id="16893"
+                                            id="view-overview-group-messages-target-63dc56c229ffa63dc56c211dfb5"
+            aria-labelledby="view-overview-group-messages-toggle"
+            data-parent="#message-drawer-view-overview-container-63dc56c229ffa63dc56c211dfb5"
+
+                            >
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No group conversations</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                            
+                            
+                            <div
+                                class="section border-0 card rounded-0"
+                                data-region="view-overview-messages"
+                            >
+                                <div id="view-overview-messages-toggle" class="card-header rounded-0" data-region="toggle">
+                                    <button
+                                        class="btn btn-link w-100 text-left p-1 p-sm-2 d-flex rounded-0 align-items-center overview-section-toggle collapsed"
+                                        data-toggle="collapse"
+                                        data-target="#view-overview-messages-target-63dc56c229ffa63dc56c211dfb5"
+                                        aria-expanded="false"
+                                        aria-controls="view-overview-messages-target-63dc56c229ffa63dc56c211dfb5"
+                                    >
+                                        <span class="collapsed-icon-container">
+                                            <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="expanded-icon-container">
+                                            <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"  ></i>
+                                        </span>
+                                        <span class="font-weight-bold">Private</span>
+                                        <small class="hidden ml-1" data-region="section-total-count-container">
+                                            (<span aria-hidden="true" data-region="section-total-count"></span><span class="sr-only"> total conversations</span>)
+                                        </small>
+                                        <span class="hidden ml-2" data-region="loading-icon-container">
+                                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                        </span>
+                                        <span
+                                            class="hidden badge badge-pill badge-primary ml-auto bg-primary"
+                                            data-region="section-unread-count"
+                                        >
+                                            <span aria-hidden="true"></span>
+                                            <span class="sr-only">There are  unread conversations</span>
+                                        </span>
+                                    </button>
+                                </div>
+                                                            <div
+                                class="collapse border-bottom  lazy-load-list"
+                                aria-live="polite"
+                                data-region="lazy-load-list"
+                                data-user-id="16893"
+                                            id="view-overview-messages-target-63dc56c229ffa63dc56c211dfb5"
+            aria-labelledby="view-overview-messages-toggle"
+            data-parent="#message-drawer-view-overview-container-63dc56c229ffa63dc56c211dfb5"
+
+                            >
+                                
+                                <div class="hidden text-center p-2" data-region="empty-message-container">
+                                            <p class="text-muted mt-2">No private conversations</p>
+
+                                </div>
+                                <div class="hidden list-group" data-region="content-container">
+                                    
+                                </div>
+                                <div class="list-group" data-region="placeholder-container">
+                                            <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+
+                                </div>
+                                <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container" >
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                
+                <div
+                    data-region="view-search"
+                    aria-hidden="true"
+                    class="h-100 hidden"
+                    data-user-id="16893"
+                    data-users-offset="0"
+                    data-messages-offset="0"
+                    style="overflow-y: auto"
+                    
+                >
+                    <div class="hidden" data-region="search-results-container" style="overflow-y: auto">
+                        
+                        <div class="d-flex flex-column">
+                            <div class="mb-3 bg-white" data-region="all-contacts-container">
+                                <div data-region="contacts-container"  class="pt-2">
+                                    <h4 class="h6 px-2">Contacts</h4>
+                                    <div class="list-group" data-region="list"></div>
+                                </div>
+                                <div data-region="non-contacts-container" class="pt-2 border-top">
+                                    <h4 class="h6 px-2">Non-contacts</h4>
+                                    <div class="list-group" data-region="list"></div>
+                                </div>
+                                <div class="text-right">
+                                    <button class="btn btn-link text-primary" data-action="load-more-users">
+                                        <span data-region="button-text">Load more</span>
+                                        <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-white" data-region="messages-container">
+                                <h4 class="h6 px-2 pt-2">Messages</h4>
+                                <div class="list-group" data-region="list"></div>
+                                <div class="text-right">
+                                    <button class="btn btn-link text-primary" data-action="load-more-messages">
+                                        <span data-region="button-text">Load more</span>
+                                        <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="hidden p-3 text-center" data-region="no-results-container">No results</p>
+                        </div>                    </div>
+                    <div class="hidden" data-region="loading-placeholder">
+                        <div class="text-center pt-3 icon-size-4"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</div>
+                    </div>
+                    <div class="p-3 text-center" data-region="empty-message-container">
+                        <p>Search people and messages</p>
+                    </div>
+                </div>                
+                <div class="h-100 hidden bg-white" aria-hidden="true" data-region="view-settings">
+                    <div class="hidden" data-region="content-container">
+                        
+                        <div data-region="settings" class="p-3">
+                            <h3 class="h6 font-weight-bold">Privacy</h3>
+                            <p>You can restrict who can message you</p>
+                            <div data-preference="blocknoncontacts" class="mb-3">
+                                <fieldset>
+                                    <legend class="sr-only">Accept messages from:</legend>
+                                        <div class="custom-control custom-radio mb-2">
+                                            <input
+                                                type="radio"
+                                                name="message_blocknoncontacts"
+                                                class="custom-control-input"
+                                                id="block-noncontacts-63dc56c229ffa63dc56c211dfb5-1"
+                                                value="1"
+                                            >
+                                            <label class="custom-control-label ml-2" for="block-noncontacts-63dc56c229ffa63dc56c211dfb5-1">
+                                                My contacts only
+                                            </label>
+                                        </div>
+                                        <div class="custom-control custom-radio mb-2">
+                                            <input
+                                                type="radio"
+                                                name="message_blocknoncontacts"
+                                                class="custom-control-input"
+                                                id="block-noncontacts-63dc56c229ffa63dc56c211dfb5-0"
+                                                value="0"
+                                            >
+                                            <label class="custom-control-label ml-2" for="block-noncontacts-63dc56c229ffa63dc56c211dfb5-0">
+                                                My contacts and anyone in my courses
+                                            </label>
+                                        </div>
+                                </fieldset>
+                            </div>
+                        
+                            <div class="hidden" data-region="notification-preference-container">
+                                <h3 class="mb-2 mt-4 h6 font-weight-bold">Notification preferences</h3>
+                            </div>
+                        
+                            <h3 class="mb-2 mt-4 h6 font-weight-bold">General</h3>
+                            <div data-preference="entertosend">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="enter-to-send-63dc56c229ffa63dc56c211dfb5" >
+                                    <label class="custom-control-label" for="enter-to-send-63dc56c229ffa63dc56c211dfb5">
+                                        Use enter to send
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-region="placeholder-container">
+                        
+                        <div class="d-flex flex-column p-3">
+                            <div class="w-25 bg-pulse-grey h6" style="height: 18px"></div>
+                            <div class="w-75 bg-pulse-grey mb-4" style="height: 18px"></div>
+                            <div class="mb-3">
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-3">
+                                    <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                            <div class="w-50 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                            <div class="mb-4">
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                                </div>
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                            <div class="w-25 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                            <div class="mb-3">
+                                <div class="w-100 d-flex mb-2 align-items-center">
+                                    <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                                    <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                                </div>
+                            </div>
+                        </div>                    </div>
+                </div>            </div>
+            <div class="footer-container position-relative" data-region="footer-container">
+                
+                <div
+                    class="hidden border-top bg-white position-relative"
+                    aria-hidden="true"
+                    data-region="view-conversation"
+                    data-enter-to-send="0"
+                >
+                    <div class="hidden p-sm-2" data-region="content-messages-footer-container">
+                        
+                            <div
+                                class="emoji-auto-complete-container w-100 hidden"
+                                data-region="emoji-auto-complete-container"
+                                aria-live="polite"
+                                aria-hidden="true"
+                            >
+                            </div>
+                        <div class="d-flex mt-sm-1">
+                            <textarea
+                                dir="auto"
+                                data-region="send-message-txt"
+                                class="form-control bg-light"
+                                rows="3"
+                                data-auto-rows
+                                data-min-rows="3"
+                                data-max-rows="5"
+                                aria-label="Write a message..."
+                                placeholder="Write a message..."
+                                style="resize: none"
+                                maxlength="4096"
+                            ></textarea>
+                        
+                            <div class="position-relative d-flex flex-column">
+                                    <div
+                                        data-region="emoji-picker-container"
+                                        class="emoji-picker-container hidden"
+                                        aria-hidden="true"
+                                    >
+                                        
+                                        <div
+                                            data-region="emoji-picker"
+                                            class="card shadow emoji-picker"
+                                        >
+                                            <div class="card-header px-1 pt-1 pb-0 d-flex justify-content-between flex-shrink-0">
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0 selected"
+                                                    data-action="show-category"
+                                                    data-category="Recent"
+                                                    title="Recent"
+                                                >
+                                                    <i class="icon fa fa-clock-o fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Smileys & Emotion"
+                                                    title="Smileys & emotion"
+                                                >
+                                                    <i class="icon fa fa-smile-o fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="People & Body"
+                                                    title="People & body"
+                                                >
+                                                    <i class="icon fa fa-male fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Animals & Nature"
+                                                    title="Animals & nature"
+                                                >
+                                                    <i class="icon fa fa-leaf fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Food & Drink"
+                                                    title="Food & drink"
+                                                >
+                                                    <i class="icon fa fa-cutlery fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Travel & Places"
+                                                    title="Travel & places"
+                                                >
+                                                    <i class="icon fa fa-plane fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Activities"
+                                                    title="Activities"
+                                                >
+                                                    <i class="icon fa fa-futbol-o fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Objects"
+                                                    title="Objects"
+                                                >
+                                                    <i class="icon fa fa-lightbulb-o fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Symbols"
+                                                    title="Symbols"
+                                                >
+                                                    <i class="icon fa fa-heart fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                                <button
+                                                    class="btn btn-outline-secondary icon-no-margin category-button rounded-0"
+                                                    data-action="show-category"
+                                                    data-category="Flags"
+                                                    title="Flags"
+                                                >
+                                                    <i class="icon fa fa-flag fa-fw " aria-hidden="true"  ></i>
+                                                </button>
+                                            </div>
+                                            <div class="card-body p-2 d-flex flex-column overflow-hidden">
+                                                <div class="input-group mb-1 flex-shrink-0">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text pr-0 bg-white text-muted">
+                                                            <i class="icon fa fa-search fa-fw " aria-hidden="true"  ></i>
+                                                        </span>
+                                                    </div>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control border-left-0"
+                                                        placeholder="Search"
+                                                        aria-label="Search"
+                                                        data-region="search-input"
+                                                    >
+                                                </div>
+                                                <div class="flex-grow-1 overflow-auto emojis-container h-100" data-region="emojis-container">
+                                                    <div class="position-relative" data-region="row-container"></div>
+                                                </div>
+                                                <div class="flex-grow-1 overflow-auto search-results-container h-100 hidden" data-region="search-results-container">
+                                                    <div class="position-relative" data-region="row-container"></div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="card-footer d-flex flex-shrink-0"
+                                                data-region="footer"
+                                            >
+                                                <div class="emoji-preview" data-region="emoji-preview"></div>
+                                                <div data-region="emoji-short-name" class="emoji-short-name text-muted text-wrap ml-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="btn btn-link btn-icon icon-size-3 ml-1"
+                                        aria-label="Toggle emoji picker"
+                                        data-action="toggle-emoji-picker"
+                                    >
+                                        <i class="icon fa fa-smile-o fa-fw " aria-hidden="true"  ></i>
+                                    </button>
+                                <button
+                                    class="btn btn-link btn-icon icon-size-3 ml-1 mt-auto"
+                                    aria-label="Send message"
+                                    data-action="send-message"
+                                >
+                                    <span data-region="send-icon-container"><i class="icon fa fa-paper-plane fa-fw " aria-hidden="true"  ></i></span>
+                                    <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden p-sm-2" data-region="content-messages-footer-edit-mode-container">
+                        
+                        <div class="d-flex p-3 justify-content-end">
+                            <button
+                                class="btn btn-link btn-icon my-1 icon-size-4"
+                                data-action="delete-selected-messages"
+                                data-toggle="tooltip"
+                                data-placement="top"
+                                title="Delete selected messages"
+                            >
+                                <span data-region="icon-container"><i class="icon fa fa-trash fa-fw " aria-hidden="true"  ></i></span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                                <span class="sr-only">Delete selected messages</span>
+                            </button>
+                        </div>                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-require-contact-container">
+                        
+                        <div class="p-3 bg-white">
+                            <p data-region="title"></p>
+                            <p class="text-muted" data-region="text"></p>
+                            <button type="button" class="btn btn-primary btn-block" data-action="request-add-contact">
+                                <span data-region="dialogue-button-text">Send contact request</span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-require-unblock-container">
+                        
+                        <div class="p-3 bg-white">
+                            <p class="text-muted" data-region="text">You have blocked this user.</p>
+                            <button type="button" class="btn btn-primary btn-block" data-action="request-unblock">
+                                <span data-region="dialogue-button-text">Unblock user</span>
+                                <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw "  title="Loading" role="img" aria-label="Loading"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hidden bg-secondary p-sm-3" data-region="content-messages-footer-unable-to-message">
+                        
+                        <div class="p-3 bg-white">
+                            <p class="text-muted" data-region="text">You are unable to message this user</p>
+                        </div>
+                    </div>
+                    <div class="p-sm-2" data-region="placeholder-container">
+                        <div class="d-flex">
+                            <div class="bg-pulse-grey w-100" style="height: 80px"></div>
+                            <div class="mx-2 mb-2 align-self-end bg-pulse-grey" style="height: 20px; width: 20px"></div>
+                        </div>                    </div>
+                    <div
+                        class="hidden position-absolute z-index-1"
+                        data-region="confirm-dialogue-container"
+                        style="top: -1px; bottom: 0; right: 0; left: 0; background: rgba(0,0,0,0.3);"
+                    ></div>
+                </div>                    <div data-region="view-overview" class="text-center">
+                        <a href="https://moodle.cs.uwindsor.ca/message/index.php">
+                            See all
+                        </a>
+                    </div>
+            </div>
+        </div>
+
+</div>
+</div>
+
+</body>
+</html>
